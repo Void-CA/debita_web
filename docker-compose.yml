@@ -1,25 +1,20 @@
-version: "3.9"
-
 services:
 
   backend:
-    build:
-      context: ./backend
+    build: ./backend
     container_name: django_backend
-    volumes:
-      - ./backend:/app
     ports:
       - "8000:8000"
+    volumes:
+      - ./backend:/app:Z
     command: python manage.py runserver 0.0.0.0:8000
 
   frontend:
-    build:
-      context: ./frontend
+    build: ./frontend
     container_name: vite_frontend
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
     ports:
       - "5173:5173"
-    depends_on:
-      - backend
+    volumes:
+      - ./frontend:/app:Z
+      - /app/node_modules
+    command: pnpm dev --host

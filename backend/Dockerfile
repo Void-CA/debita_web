@@ -2,21 +2,12 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-# evitar archivos pyc y buffer
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
+RUN useradd -m appuser
+USER appuser
 
-# instalar dependencias del sistema si se necesitan
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
-
-# copiar dependencias
 COPY requirements.txt .
-
 RUN pip install --no-cache-dir -r requirements.txt
 
-# copiar proyecto
 COPY . .
 
 EXPOSE 8000
