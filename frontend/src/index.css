@@ -1,1 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-sketch: "Architects Daughter", cursive;
+  --color-debita-green: #4ade80;
+}

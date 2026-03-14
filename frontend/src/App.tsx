@@ -1,34 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 
 function CompanyCard({ name }: { name: string }) {
   return (
-    <div className="card company-card">
+    <div className="flex items-center justify-center w-60 h-45 bg-white border-3 border-black rounded-2xl cursor-pointer hover:-translate-y-1 hover:shadow-lg transition-all duration-200 text-xl font-sketch font-semibold">
       <p>{name}</p>
     </div>
   )
 }
 
 function App() {
-  const [count, setCount] = useState(0)
   return (
-    <div className="flex flex-col items-center p-10 min-h-screen bg-gray-50">
-      <header className="text-center mb-12">
-        <h1 className="text-5xl font-bold text-green-500 tracking-tight">DEBITA</h1>
-        <p className="text-xl text-gray-500 mt-2">Gestión de Finanzas Operativas</p>
+    <div className="flex flex-col items-center p-0.5 min-h-screen bg-white">
+      <header className="text-center w-full h-24 mb-30 border-2 border-black rounded-2xl">
+        <h1 className="text-xl font-sketch text-green-500 tracking-tight mt-4 font-semibold">DEBITA</h1>
+        <p className="text-xl font-sketch text-green-500 font-semibold">Gestión de Finanzas Operativas</p>
       </header>
 
-      <section className="flex flex-wrap justify-center gap-6 w-full max-w-4xl">
-        {/* Tarjeta de Add Company con Tailwind */}
-        <div className="flex flex-col items-center justify-center w-52 h-52 border-2 border-dashed border-gray-400 rounded-2xl cursor-pointer hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
-          <span className="text-4xl text-gray-600 mb-2">+</span>
-          <p className="text-gray-700 font-medium">Add Company</p>
+      <section className="flex flex-wrap justify-center gap-6 w-full max-w-6xl">
+
+        {/* Tarjeta de + Add Company*/}
+        <div className="flex flex-col items-center justify-center w-60 h-45 bg-white border-3 border-black rounded-2xl cursor-pointer hover:-translate-y-1 hover:shadow-lg transition-all duration-200">
+          <span className="text-4xl text-gray-600 mb-2 font-semibold ">+</span>
+          <p className="text-black font-semibold font-sketch text-xl">Add Company</p>
         </div>
+
+        {/* Tarjetas de Empresas */}
+        <CompanyCard name="CompanyCard" />
+        <CompanyCard name="CompanyCard" />
+        <CompanyCard name="CompanyCard" />
       </section>
       
-      <footer className="mt-auto pt-10 text-sm text-gray-400">
+      <footer className="mt-auto pt-10 text-sm text-black font-sketch">
         Derechos reservados - Debita 2026
       </footer>
     </div>
