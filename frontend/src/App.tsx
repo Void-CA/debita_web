@@ -25,9 +25,9 @@ function App() {
         {/*
             Tarjetas de Empresas 
         */}
-        <CompanyCard companynamecard="CompanyCard"/>
-        <CompanyCard companynamecard="CompanyCard"/>
-        <CompanyCard companynamecard="CompanyCard"/>
+        <CompanyCard company_name="CompanyCard"/>
+        <CompanyCard company_name="CompanyCard"/>
+        <CompanyCard company_name="CompanyCard"/>
       </section>
     
       {/* 
