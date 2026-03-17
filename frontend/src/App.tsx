@@ -1,8 +1,12 @@
 
 import { useState, useEffect } from 'react';
 import CompanyCard from "./features/companies/CompanyCard.tsx";
+import { useCompanies } from './features/companies/hooks/queries.ts';
 
 function App() {
+  const { companies, loading, error, refetch } = useCompanies()
+  if (error) return <p>{error}</p>
+  
   return (
 
     <div className="flex flex-col items-center p-0.5 min-h-screen bg-white">
@@ -25,9 +29,13 @@ function App() {
         {/*
             Tarjetas de Empresas 
         */}
-        <CompanyCard company_name="CompanyCard"/>
-        <CompanyCard company_name="CompanyCard"/>
-        <CompanyCard company_name="CompanyCard"/>
+
+        {/* VIVO, aqui se usa la lista de companias*/}
+        <ul>
+          {companies.map(c => (
+            <CompanyCard company_name={c.name} />
+          ))}
+        </ul>
       </section>
     
       {/* 
