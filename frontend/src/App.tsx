@@ -1,5 +1,4 @@
 
-import { useState, useEffect } from 'react';
 import CompanyCard from "./features/companies/CompanyCard.tsx";
 import { useCompanies } from './features/companies/hooks/queries.ts';
 
@@ -31,11 +30,9 @@ function App() {
         */}
 
         {/* VIVO, aqui se usa la lista de companias*/}
-        <ul>
           {companies.map(c => (
             <CompanyCard company_name={c.name} />
           ))}
-        </ul>
       </section>
     
       {/* 
