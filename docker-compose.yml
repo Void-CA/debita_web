@@ -1,20 +1,47 @@
 services:
 
+  db:
+    image: postgres:16
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_DB: project_db
+      POSTGRES_USER: project_user
+      POSTGRES_PASSWORD: project_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
   backend:
     build: ./backend
     container_name: django_backend
-    ports:
-      - "8000:8000"
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./backend:/app:Z
-    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DB_NAME: project_db
+      DB_USER: project_user
+      DB_PASSWORD: project_password
+      DB_HOST: db
+      DB_PORT: 5432
 
   frontend:
     build: ./frontend
     container_name: vite_frontend
-    ports:
-      - "5173:5173"
+    command: pnpm dev --host
     volumes:
       - ./frontend:/app:Z
-      - /app/node_modules
-    command: pnpm dev --host
+      - node_modules:/app/node_modules
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+  node_modules:
