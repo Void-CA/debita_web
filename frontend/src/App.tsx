@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import CompanyCard from "./components/CompanyCard.tsx";
+import CompanyCard from "./features/companies/CompanyCard.tsx";
 
 function App() {
   return (
