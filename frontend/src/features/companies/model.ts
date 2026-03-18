@@ -4,5 +4,4 @@ interface Company {
     ruc: string;
     created_at: string;
 }
-
 export type { Company };
