@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap);
 @import "tailwindcss";
 
 @theme {
-  --font-sketch: "Architects Daughter", cursive;
-  --color-debita-green: #4ade80;
+  --font-sketch: "Poppins", sans-serif;
 }
+
