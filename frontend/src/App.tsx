@@ -25,16 +25,24 @@ function App() {
         {/* Items de Navegación */}
         <nav className="flex flex-col gap-4">
 
-          <button className="px-15 mb-10 flex items-center gap-2 p-2 rounded-lg hover:shadow-black  hover:-translate-y-1 hover:shadow-md transition-all cursor-pointer text-center bg-rgba(255, 255, 255, 0.9)">
+          <button className="flex flex-col items-center box-shadow px-15 mb-10  gap-2 p-2 rounded-lg hover:shadow-black  hover:-translate-y-1 hover:shadow-md transition-all cursor-pointer text-center bg-rgba(255, 255, 255, 0.9)">
             Dashboard
           </button>
 
-          <button className="px-15 mb-10 flex items-center gap-2 p-2 rounded-lg hover:shadow-black hover:-translate-y-1 hover:shadow-md transition-all cursor-pointer text-center bg-rgba(255, 255, 255, 0.9)">
-            Formulario
+          <button className="flex flex-col items-center box-shadow px-15 mb-10  gap-2 p-2 rounded-lg hover:shadow-black hover:-translate-y-1 hover:shadow-md transition-all cursor-pointer text-center bg-rgba(255, 255, 255, 0.9)">
+            Clientes
           </button>
 
-          <button className="px-15 mb-10 flex items-center gap-2 p-2 rounded-lg hover:shadow-black hover:-translate-y-1 hover:shadow-md transition-all cursor-pointer text-center bg-rgba(255, 255, 255, 0.9)">
-            Solicitudes
+          <button className="flex flex-col items-center box-shadow px-15 mb-10  gap-2 p-2 rounded-lg hover:shadow-black hover:-translate-y-1 hover:shadow-md transition-all cursor-pointer text-center bg-rgba(255, 255, 255, 0.9)">
+            Facturas
+          </button>
+
+          <button className="flex flex-col items-center box-shadow px-15 mb-10 gap-2 p-2 rounded-lg hover:shadow-black hover:-translate-y-1 hover:shadow-md transition-all cursor-pointer text-center bg-rgba(255, 255, 255, 0.9)">
+            Pagos
+          </button>
+
+          <button className="flex flex-col items-center box-shadow ap-2 p-2 px-27 mt-40 rounded-lg hover:shadow-black hover:-translate-y-1 hover:shadow-md transition-all cursor-pointer text-center bg-rgba(255, 255, 255, 0.9)">
+            Perfil
           </button>
 
         </nav>
@@ -48,13 +56,17 @@ function App() {
           <h2 className="text-4xl font-poppins font-semibold text-white">Gestión de Finanzas Operativa</h2>
         </header>
 
-        {/*Tarjeta de Clientes*/}
-        <div className="flex flex-col items-center justify-center w-45 h-40 ml-10 bg-[#32b569] box-shadow rounded-3xl cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-black transition-all duration-200">
-          <p className="text-black font-semibold font-poppins text-xl">Clientes</p>
-        </div>
+        {/* Contenedor padre para separar las tarjetas */}
+        <div className="flex flex-row gap-10 ml-10">
 
+          {/*Tarjeta de Clientes*/}
+          <div className="flex flex-col items-center justify-center w-56 h-52 bg-[#32b569] shadow-md rounded-3xl cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-black transition-all duration-200">
+            <p className="text-black font-semibold font-poppins text-xl">Empresa 1</p>
+          </div>
+        
+        </div>
         {/* Sección de Tarjetas */}
-        <section className="flex flex-wrap gap-6 w-full mt-8">
+        <section className="flex flex-wrap gap-6 w-full mt-12 ml-10">
           {loading && <p>Cargando clientes...</p>}
 
           {companies?.map(c => (
