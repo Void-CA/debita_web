@@ -1,6 +1,7 @@
 import CompanyCard from "./features/companies/CompanyCard.tsx";
 import { useCompanies } from './features/companies/hooks/queries.ts';
 import Background from './assets/Background.svg';
+import React from "react";
 
 function App() {
   const { companies, loading, error, refetch } = useCompanies()
@@ -24,15 +25,15 @@ function App() {
         {/* Items de Navegación */}
         <nav className="flex flex-col gap-4">
 
-          <button className="px-15 flex items-center gap-2 p-2 rounded-lg hover:shadow-black  hover:-translate-y-1 hover:shadow-md transition-all cursor-pointer text-center bg-rgba(255, 255, 255, 0.9)">
+          <button className="px-15 mb-10 flex items-center gap-2 p-2 rounded-lg hover:shadow-black  hover:-translate-y-1 hover:shadow-md transition-all cursor-pointer text-center bg-rgba(255, 255, 255, 0.9)">
             📊 Dashboard
           </button>
 
-          <button className="px-15 flex items-center gap-2 p-2 rounded-lg hover:shadow-black hover:-translate-y-1 hover:shadow-md transition-all cursor-pointer text-center bg-rgba(255, 255, 255, 0.9)">
+          <button className="px-15 mb-10 flex items-center gap-2 p-2 rounded-lg hover:shadow-black hover:-translate-y-1 hover:shadow-md transition-all cursor-pointer text-center bg-rgba(255, 255, 255, 0.9)">
             📝 Formulario
           </button>
 
-          <button className="px-15 flex items-center gap-2 p-2 rounded-lg hover:shadow-black hover:-translate-y-1 hover:shadow-md transition-all cursor-pointer text-center bg-rgba(255, 255, 255, 0.9)">
+          <button className="px-15 mb-10 flex items-center gap-2 p-2 rounded-lg hover:shadow-black hover:-translate-y-1 hover:shadow-md transition-all cursor-pointer text-center bg-rgba(255, 255, 255, 0.9)">
             📝 Solicitudes
           </button>
 
@@ -52,9 +53,9 @@ function App() {
           </button>
         </header>
 
-        {/*Tarjeta de Dashboard*/}
-        <div className="flex flex-col items-center justify-center w-60 h-45 bg-white box-shadow rounded-2xl cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-black transition-all duration-200">
-          <p className="text-black font-semibold font-sketch text-xl">Dashboard</p>
+        {/*Tarjeta de Clientes*/}
+        <div className="flex flex-col items-center justify-center w-45 h-40 ml-10 bg-[#32b569] box-shadow rounded-3xl cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-black transition-all duration-200">
+          <p className="text-black font-semibold font-sketch text-xl">Clientes</p>
         </div>
 
         {/* Sección de Tarjetas */}
@@ -65,9 +66,6 @@ function App() {
             <CompanyCard key={c.name} company_name={c.name} />
           ))}
         </section>
-        <footer className="bg-white/300  border-black p-120 text-center text-white">
-        <p>&copy; 2023 Debita. Todos los derechos reservados.</p>
-      </footer>
       </main>
       
     </div>
