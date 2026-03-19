@@ -1,6 +1,6 @@
 import CompanyCard from "./features/companies/CompanyCard.tsx";
 import { useCompanies } from './features/companies/hooks/queries.ts';
-import Background from './assets/background.jpg';
+import Background from './assets/Background.svg';
 
 function App() {
   const { companies, loading, error, refetch } = useCompanies()
@@ -14,7 +14,7 @@ function App() {
     >
 
       {/* Sidebar */}
-      <aside className="w-64 border-r-2 border-black flex flex-col p-4 bg-white/10">
+      <aside className="w-64 border-r-2 border-black flex flex-col p-4 bg-white/300">
 
         {/* Título del Sidebar */}
         <div className="mb-10 mt-4 px-10">
@@ -41,10 +41,10 @@ function App() {
       </aside>
 
       {/* MAIN CONTENT */}
-      <main className="flex-1 flex flex-col p-8 overflow-y-auto bg-white/50">
+      <main className="flex-1 flex flex-col p-8 overflow-y-auto bg-white/300">
         
         <header className="flex justify-between items-center mb-10 w-full">
-          <h2 className="text-3xl font-semibold">Gestión de Finanzas Operativa</h2>
+          <h2 className="text-3xl font-semibold text-white">Gestión de Finanzas Operativa</h2>
           
           {/* Botón de crear*/}
           <button className="px-4 py-2  rounded-lg font-semibold bg-blue-500 hover:bg-blue-600 text-white hover:-translate-y-1 hover:shadow-md hover:shadow-black transition-all duration-200 cursor-pointer">
@@ -65,9 +65,11 @@ function App() {
             <CompanyCard key={c.name} company_name={c.name} />
           ))}
         </section>
-
+        <footer className="bg-white/300  border-black p-120 text-center text-white">
+        <p>&copy; 2023 Debita. Todos los derechos reservados.</p>
+      </footer>
       </main>
-
+      
     </div>
   )
 }
