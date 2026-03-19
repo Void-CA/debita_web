@@ -18,21 +18,21 @@ function App() {
 
         {/* Título del Sidebar */}
         <div className="mb-10 mt-4 px-10">
-          <h1 className="text-5xl text-green-500 font-semibold tracking-tight">Debita</h1>
+          <h1 className="text-5xl text-white font-semibold tracking-tight">Debita</h1>
         </div>
 
         {/* Items de Navegación */}
         <nav className="flex flex-col gap-4">
 
-          <button className="px-15 flex items-center gap-2 p-2 border-2 border-black rounded-lg hover:bg-gray-300 transition-colors cursor-pointer text-center bg-white">
+          <button className="px-15 flex items-center gap-2 p-2 rounded-lg hover:shadow-black  hover:-translate-y-1 hover:shadow-md transition-all cursor-pointer text-center bg-rgba(255, 255, 255, 0.9)">
             📊 Dashboard
           </button>
 
-          <button className="px-15 flex items-center gap-2 p-2 border-2 border-black rounded-lg hover:bg-gray-300 transition-colors cursor-pointer text-center bg-white">
+          <button className="px-15 flex items-center gap-2 p-2 rounded-lg hover:shadow-black hover:-translate-y-1 hover:shadow-md transition-all cursor-pointer text-center bg-rgba(255, 255, 255, 0.9)">
             📝 Formulario
           </button>
 
-          <button className="px-15 flex items-center gap-2 p-2 border-2 border-black rounded-lg hover:bg-gray-300 transition-colors cursor-pointer text-center bg-white">
+          <button className="px-15 flex items-center gap-2 p-2 rounded-lg hover:shadow-black hover:-translate-y-1 hover:shadow-md transition-all cursor-pointer text-center bg-rgba(255, 255, 255, 0.9)">
             📝 Solicitudes
           </button>
 
@@ -44,18 +44,17 @@ function App() {
       <main className="flex-1 flex flex-col p-8 overflow-y-auto bg-white/50">
         
         <header className="flex justify-between items-center mb-10 w-full">
-          <h2 className="text-3xl font-semibold">Gestión de Clientes</h2>
+          <h2 className="text-3xl font-semibold">Gestión de Finanzas Operativa</h2>
           
           {/* Botón de crear*/}
-          <button className="px-4 py-2 border-2 border-black rounded-lg font-semibold bg-white hover:-translate-y-1 hover:shadow-md hover:shadow-black transition-all duration-200 cursor-pointer">
+          <button className="px-4 py-2  rounded-lg font-semibold bg-blue-500 hover:bg-blue-600 text-white hover:-translate-y-1 hover:shadow-md hover:shadow-black transition-all duration-200 cursor-pointer">
             + Agregar Cliente
           </button>
         </header>
 
-        {/*Tarjeta de + Add Company*/}
-        <div className="flex flex-col items-center justify-center w-60 h-45 bg-white border-3 border-black rounded-2xl cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-black transition-all duration-200">
-          <span className="text-2xl text-black mb-2 font-semibold">+</span>
-          <p className="text-black font-semibold font-sketch text-xl">Add Company</p>
+        {/*Tarjeta de Dashboard*/}
+        <div className="flex flex-col items-center justify-center w-60 h-45 bg-white box-shadow rounded-2xl cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-black transition-all duration-200">
+          <p className="text-black font-semibold font-sketch text-xl">Dashboard</p>
         </div>
 
         {/* Sección de Tarjetas */}
