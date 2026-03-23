@@ -1,6 +1,7 @@
 import { useCompanies } from './features/companies/hooks/queries.ts';
 import Background from './assets/Background.svg';
 import React from "react";
+import { useState } from 'react';
 import CompanyCard from "./features/companies/CompanyCard.tsx";
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Clientes from './features/pages/clients.tsx';
@@ -9,6 +10,7 @@ import Pagos from './features/pages/payments.tsx';
 
 function App() {
   const { companies, loading, error, refetch } = useCompanies()
+  const [mostrarModal, setMostrarModal] = useState(false);
   
   if (error) return <p>{error}</p>
   
@@ -66,13 +68,17 @@ function App() {
                 </h2>
                  
                 {/* Botón de crear*/}
-                <button className="flex flex-row items-center px-4 py-2 rounded-lg font-poppins font-semibold bg-blue-500 hover:bg-blue-600 text-white hover:-translate-y-1 hover:shadow-md hover:shadow-black transition-all duration-200 cursor-pointer">
+                <button 
+                  onClick={() => setMostrarModal(true)}
+                  className="flex flex-row items-center px-4 py-2 rounded-lg font-poppins font-semibold bg-blue-500 hover:bg-blue-600 text-white hover:-translate-y-1 hover:shadow-md hover:shadow-black transition-all duration-200 cursor-pointer"
+                >
                   + Agregar Cliente
                 </button>
               </header>
 
               {/* Contenedor padre para separar las tarjetas */}
               <div className="flex flex-row gap-10 ml-10">
+
                 {/*Tarjeta de Cliente eje*/}
                 <div className="flex flex-col items-center justify-center w-70 h-50 bg-[#32b569] shadow-md rounded-3xl cursor-pointer hover:-translate-y-1 hover:shadow-lg hover:shadow-black transition-all duration-200">
                   <p className="text-black font-semibold font-poppins text-xl">Empresa 1</p>
@@ -87,6 +93,38 @@ function App() {
                  ))}
                 </section>
               </div>
+              
+              {/* Modal */}
+              {mostrarModal && (
+                <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50 backdrop-blur-sm">
+                  <div className="bg-white p-8 rounded-2xl shadow-2xl w-500 flex flex-col gap-6 transform transition-all">
+                    
+                    <h3 className="text-3xl font-bold font-poppins text-gray-800 border-b-2 border-gray-100 pb-2">
+                      Nuevo Cliente
+                    </h3>
+                    
+                    <p className="text-gray-500 font-poppins">
+                      Aquí pondremos los inputs (Nombre, Correo, Empresa, etc...)
+                    </p>
+
+                    <div className="flex justify-end gap-4 mt-4">
+
+                      {/* Este botón apaga el interruptor */}
+                      <button 
+                        onClick={() => setMostrarModal(false)}
+                        className="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 font-poppins font-semibold transition-all cursor-pointer"
+                      >
+                        Cancelar
+                      </button>
+                      
+                      <button className="px-6 py-2 bg-[#32b569] text-white rounded-lg hover:bg-green-600 font-poppins font-semibold hover:shadow-md transition-all cursor-pointer">
+                        Guardar Cliente
+                      </button>
+                    </div>
+
+                  </div>
+                </div>
+              )}
             </>
           } />
 
