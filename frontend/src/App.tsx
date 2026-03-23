@@ -52,7 +52,7 @@ function App() {
       {/* MAIN CONTENT */}
       <main className="flex-1 flex flex-col p-8 overflow-y-auto bg-teal-100/80">
         
-        <header className="flex justify-between items-center mb-10 w-310 px-10">
+        <header className="flex justify-between items-center mb-10 w-300 px-10">
 
           <h2 className="flex flex-row text-4xl font-poppins font-semibold text-white">Gestión de Finanzas Operativa
           </h2>
