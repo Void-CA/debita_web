@@ -2,7 +2,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// Simulación de datos (esto vendrá luego de tu API)
 const empresasRegistradas = [
   { id: 1, name: 'Empresa Eje', initials: 'EE' },
   { id: 2, name: 'Servicios Integrales S.A.', initials: 'SI' },
@@ -13,14 +12,29 @@ export default function SeleccionEmpresa() {
 
   const handleSelectCompany = (companyId: number, companyName: string) => {
     console.log(`Seleccionada: ${companyName}`);
-    
     localStorage.setItem('selectedCompanyName', companyName);
     navigate('/dashboard'); 
   };
 
+  const handleLogout = () => {
+    navigate('/login');
+  };
+
   return (
-    <div className="h-screen flex flex-col justify-between bg-white font-poppins text-[#1f4e3d]">
+    <div className="h-screen flex flex-col justify-between bg-white font-poppins text-[#1f4e3d] relative">
       
+      <div className="absolute top-6 left-8">
+        <button 
+          onClick={handleLogout}
+          className="flex items-center gap-2 text-gray-400 hover:text-red-500 transition-colors font-medium text-sm group cursor-pointer"
+        >
+          <svg className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>
+          Cerrar sesión
+        </button>
+      </div>
+
       {/* Contenido Central */}
       <div className="flex-1 flex flex-col items-center justify-center p-10">
         
@@ -33,13 +47,11 @@ export default function SeleccionEmpresa() {
         {/* Cuadrícula de tarjetas */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
           
-          {/* Botón de nueva empresa */}
           <button className="w-72 h-44 border-2 border-dashed border-gray-300 rounded-2xl flex flex-col items-center justify-center text-gray-400 hover:border-[#32b569] hover:text-[#32b569] hover:bg-green-50 transition-all cursor-pointer group">
             <span className="text-5xl mb-2 group-hover:scale-110 transition-transform">+</span>
             <span className="font-semibold text-sm">Registrar nueva empresa</span>
           </button>
 
-          {/* Mapeo de empresas */}
           {empresasRegistradas.map(empresa => (
              <div 
                key={empresa.id} 
@@ -50,19 +62,18 @@ export default function SeleccionEmpresa() {
                     <h3 className="font-bold text-xl text-gray-800 leading-tight w-2/3">
                         {empresa.name}
                     </h3>
-                    {/* Un avatar simple con iniciales */}
                     <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center font-bold text-gray-500 text-lg">
                         {empresa.initials}
                     </div>
                 </div>
                 
-                <p className="text-xs text-gray-400 font-medium">Último acceso: </p>
+                <p className="text-xs text-gray-400 font-medium">Último acceso: Hoy</p>
              </div>
           ))}
         </div>
       </div>
 
-      {/* Footer Oscuro */}
+      {/* Footer */}
       <footer className="bg-[#1f4e3d] text-white/70 text-center py-5 text-sm font-light">
         © 2026 DEBITA. Todos los derechos reservados.
       </footer>

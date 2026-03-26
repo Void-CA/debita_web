@@ -9,7 +9,7 @@ export default function Dashboard() {
     <div className="p-8 w-full">
       <header className="flex justify-between items-center mb-10 w-full px-10">
         <h1 className="text-4xl font-poppins font-semibold text-gray-800">
-          Gestión de Finanzas Operativa
+          Dashboard
         </h1>
       </header>
       
