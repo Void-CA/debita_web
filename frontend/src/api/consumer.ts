@@ -2,7 +2,7 @@ import type { AxiosRequestConfig } from "axios"
 import axios from "axios"
 
 const client = axios.create({
-  baseURL: "http://localhost:8000/api", // ajusta esto
+  baseURL: "http://localhost:8000/api",
   timeout: 5000,
 })
 

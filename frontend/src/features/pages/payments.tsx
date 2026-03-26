@@ -1,3 +1,10 @@
 export default function Pagos() {
-  return <h2 className="text-white text-3xl">Página de Pagos</h2>;
+  return (
+    <>
+    <header className="flex justify-between items-center mb-10 w-300 px-10">
+      <h1 className="flex flex-row text-4xl font-poppins font-semibold text-white">Página de Pagos
+      </h1>
+    </header>
+    </>
+  );
 }
