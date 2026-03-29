@@ -47,7 +47,7 @@ export default function SeleccionEmpresa() {
         {/* Cuadrícula de tarjetas */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
           
-          <button className="w-72 h-44 border-2 border-dashed border-gray-300 rounded-2xl flex flex-col items-center justify-center text-gray-400 hover:border-[#32b569] hover:text-[#32b569] hover:bg-green-50 transition-all cursor-pointer group">
+          <button className="w-72 h-44 border-2 border-dashed border-gray-300 rounded-2xl flex flex-col items-center justify-center text-gray-400 hover:border-[#32b569] hover:text-[#32b569] hover:bg-green-50 hover:-translate-y-1 transition-all cursor-pointer group">
             <span className="text-5xl mb-2 group-hover:scale-110 transition-transform">+</span>
             <span className="font-semibold text-sm">Registrar nueva empresa</span>
           </button>
