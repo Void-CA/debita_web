@@ -6,7 +6,7 @@ export default function Login() {
 
   const handleLogin = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    navigate('/dashboard'); 
+    navigate('/seleccion-empresa'); 
   };
 
   return (
