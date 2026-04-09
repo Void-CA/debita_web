@@ -1,5 +1,4 @@
 // src/features/companies/SeleccionEmpresa.tsx
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const empresasRegistradas = [
@@ -10,7 +9,7 @@ const empresasRegistradas = [
 export default function SeleccionEmpresa() {
   const navigate = useNavigate();
 
-  const handleSelectCompany = (companyId: number, companyName: string) => {
+  const handleSelectCompany = (companyName: string) => {
     console.log(`Seleccionada: ${companyName}`);
     localStorage.setItem('selectedCompanyName', companyName);
     navigate('/dashboard'); 
@@ -55,7 +54,7 @@ export default function SeleccionEmpresa() {
           {empresasRegistradas.map(empresa => (
              <div 
                key={empresa.id} 
-               onClick={() => handleSelectCompany(empresa.id, empresa.name)}
+               onClick={() => handleSelectCompany(empresa.name)}
                className="w-72 h-44 border border-gray-100 rounded-2xl shadow-sm p-6 flex flex-col justify-between cursor-pointer hover:shadow-md hover:border-[#32b569] hover:-translate-y-1 transition-all bg-white"
              >
                 <div className="flex justify-between items-start">

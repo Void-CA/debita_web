@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import ClientCard from '../companies/ClientCard';
+
+import { useState } from 'react';
+import ClientCard from '../../companies/ClientCard';
 
 const clientesDePrueba = [
   { id: "001", nombre: "Edgardo Windler", ruc: "J344986279", contacto: "228-017-4622 x6683" },
