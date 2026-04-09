@@ -16,9 +16,6 @@ export function CashFlowChart() {
             <option>Este mes</option>
           </select>
         </div>
-        <button className="w-full bg-[#1A2521] hover:bg-[#2A3F38] text-white font-medium py-3 rounded-xl transition-colors shadow-sm">
-          + Nueva Factura
-        </button>
       </div>
     </div>
   );
