@@ -1,7 +1,3 @@
-// src/features/clients/ClientCard.tsx (o donde prefieras guardarlo)
-import React from 'react';
-
-// Definimos los datos exactos que necesita la tarjeta
 interface ClientCardProps {
   nombre: string;
   ruc: string;
